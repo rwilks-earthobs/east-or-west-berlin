@@ -68,11 +68,11 @@
     // Load polygons via fetch
     async function loadPolygons() {
       try {
-        const westRes = await fetch('west_berlin.geojson');
+        const westRes = await fetch('west_berlin_polygon.geojson');
         westBerlin = await westRes.json();
         westLayer = L.geoJSON(westBerlin, { color: 'green', fillOpacity: 0.3 }).addTo(map);
 
-        const deathRes = await fetch('death_zone.geojson');
+        const deathRes = await fetch('death_zone_polygon.geojson');
         deathZone = await deathRes.json();
         deathLayer = L.geoJSON(deathZone, { color: 'orange', fillOpacity: 0.4 }).addTo(map);
 
